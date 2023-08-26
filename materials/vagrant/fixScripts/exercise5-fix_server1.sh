@@ -1,2 +1,6 @@
 #!/bin/bash
-#add fix to exercise5-server1 here
+cat <<EOF > /home/vagrant/.ssh/config
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+EOF

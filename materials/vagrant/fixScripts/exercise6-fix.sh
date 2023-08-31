@@ -1,13 +1,14 @@
 #!/bin/bash
+set -e
 
 files_to_copy=${@:1:$#-1}
 
 dest_dir=${@: -1}
 
 if [ "$(hostname)" = server1 ]; then
-  ssh vagrant@server2 "mkdir -p $dest_dir"
+  ssh server2 "mkdir -p $dest_dir"
 else
-  ssh vagrant@server1 "mkdir -p $dest_dir"
+  ssh server1 "mkdir -p $dest_dir"
 fi
 
 total_byes=0
